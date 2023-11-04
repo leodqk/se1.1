@@ -1,0 +1,20 @@
+.text-item {
+  color: var(--ig-primary-text);
+  font-size: 16px;
+  padding-left: 12px;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: var(--ig-primary-text);
+  display: flex;
+  flex-direction: row;
+  padding-right: 12px;
+  width: 100%;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+/* .nav-item:active {
+  color: var(--ig-primary-text);
+} */

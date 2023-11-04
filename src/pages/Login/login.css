@@ -1,0 +1,46 @@
+.login-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+  padding: 50px;
+  width: 1000px;
+  box-shadow: 1px 2px 9px #f4aab9;
+  /* box-shadow: -1px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 0px 5px 0px rgba(0, 0, 0, 0.75); */
+  /* background-image: url(https://scontent.fsgn2-7.fna.fbcdn.net/v/t1.15752-9/395994014_1061878635247603_1455685489521807560_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeGvYhnAzPZnlZqKlIV0xUhQwxYPRuRQpKvDFg9G5FCkq3FPNgtxFAT36cWsMRClQ5EnWFNnRkrM-nAubZy-2AXt&_nc_ohc=aY6lQ0rzNNUAX-3LKOj&_nc_ht=scontent.fsgn2-7.fna&oh=03_AdS0ObpmzS_Uyta9SYRv-LAA8I2AE2siO4vED4RfeZ8dlA&oe=6567FB3B);
+  background-size: contain; */
+}
+
+.main-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-form .mb-3 .form-control {
+  width: 500px;
+}
+
+.flex {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 30px;
+}
+
+.flex a {
+  text-decoration: none;
+}
+
+.social-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.social-btn a {
+  font-size: 24px;
+}
