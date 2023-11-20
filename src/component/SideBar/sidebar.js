@@ -23,8 +23,12 @@ import { CircleAvatar } from "../CircleAvatar/CircleAvatar";
 import { useState } from "react";
 const cx = classNames.bind(styles);
 
-function Sidebar() {
-  const [myValue, setMyValue] = useState(null);
+const Sidebar = () => {
+  const [GetactiveIcon, setActiveIcon] = useState();
+  const handleIconClick = (iconName) => {
+    setActiveIcon(iconName);
+  };
+  // handleIconClick(false);
   return (
     <div className={cx("sidebar-wrapper")}>
       <div className={cx("logo")}>
@@ -35,20 +39,20 @@ function Sidebar() {
           icon={<IconHome />}
           activeIcon={<IconHomeActive />}
           title="Home"
-          isActive={myValue}
-          onClick={() => {
-            setMyValue(true);
-          }}
+          // isActive={GetactiveIcon}
+          // onClick={() => {
+          //   handleIconClick(true);
+          // }}
           path={"/"}
         />
         <NavItem
           icon={<IconSearch />}
           activeIcon={<IconSearchActive />}
           title="Tìm kiếm"
-          isActive={myValue}
-          onClick={() => {
-            setMyValue(true);
-          }}
+          // isActive={GetactiveIcon}
+          // onClick={() => {
+          //   handleIconClick(true);
+          // }}
           path={"/search"}
         />
         <NavItem
@@ -65,6 +69,7 @@ function Sidebar() {
           title="Reels"
           isActive={false}
           onClick={() => console.log("Reels Tab")}
+          path={"/reels"}
         />
         <NavItem
           icon={<IconMess />}
@@ -72,6 +77,7 @@ function Sidebar() {
           title="Tin nhắn"
           isActive={false}
           onClick={() => console.log("Mess Tab")}
+          path={"/message"}
         />
         <NavItem
           icon={<IconNotification />}
@@ -79,6 +85,7 @@ function Sidebar() {
           title="Thông báo"
           isActive={false}
           onClick={() => console.log("Noti Tab")}
+          path={"/noti"}
         />
         <NavItem
           icon={<IconNewPost />}
@@ -86,6 +93,7 @@ function Sidebar() {
           title="Bài viết mới"
           isActive={false}
           onClick={() => console.log("New Post Tab")}
+          path={"/newpost"}
         />
         <NavItem
           icon={
@@ -113,6 +121,6 @@ function Sidebar() {
       </div>
     </div>
   );
-}
+};
 
 export default Sidebar;

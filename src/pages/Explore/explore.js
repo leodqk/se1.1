@@ -5,7 +5,7 @@ const cx = classNames.bind(styles);
 function Explore() {
   return (
     <div className={cx("home-wrapper")}>
-      <h2>Explore</h2>
+      <h2>Khai dep trai</h2>
     </div>
   );
 }
