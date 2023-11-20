@@ -1,17 +1,19 @@
 import classNames from "classnames/bind";
 import styles from "./search.css";
-import { AiOutlineSearch } from "react-icons/ai";
+import { MdCancel } from "react-icons/md";
 const cx = classNames.bind(styles);
 function Search() {
   return (
     <div className={cx("search-wrapper")}>
       <h2>Tìm kiếm</h2>
       <div className={cx("search-box")}>
-        <AiOutlineSearch />
+        <MdCancel className={cx("cancel-icon")} />
         <input type="text" placeholder="Tìm kiếm" />
       </div>
 
-      <h4>Gần đây</h4>
+      <div className={cx("search-content")}>
+        <p>Không có nội dung tìm kiếm</p>
+      </div>
     </div>
   );
 }
