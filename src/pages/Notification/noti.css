@@ -1,0 +1,36 @@
+.noti-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    padding-left: 24px;
+    padding-right: 10px;
+    padding-top: 12px;
+}
+
+.noti-wrapper h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    font-size: 30px;
+}
+
+.avatar-with-text {
+    display: flex;
+    align-items: center;
+}
+
+.centered-text {
+    margin: 0;
+    margin-left: 10px;
+    /* Xóa margin mặc định của đoạn văn bản */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Căn giữa theo chiều dọc và ngang */
+    height: 100%;
+    /* Cài đặt chiều cao cho việc căn giữa */
+}
+
+
+.noti-content {}
