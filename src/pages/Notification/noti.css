@@ -23,8 +23,8 @@
 .centered-text {
     margin: 0;
     margin-left: 10px;
-    /* Xóa margin mặc định của đoạn văn bản */
     display: flex;
+
     align-items: center;
     justify-content: center;
     /* Căn giữa theo chiều dọc và ngang */

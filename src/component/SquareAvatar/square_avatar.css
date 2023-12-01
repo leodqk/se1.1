@@ -1,0 +1,7 @@
+.img_noti {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    object-fit: cover;
+    margin-left: 10px;
+}
