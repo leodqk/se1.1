@@ -56,7 +56,7 @@ const DashboardLayout = () => {
   const [selected, setSelected] = useState(0);
   const { onToggleMode } = useSettings();
   return (
-    <>
+    <Stack direction={"row"}>
       <Box
         p={"20px"}
         sx={{
@@ -183,7 +183,7 @@ const DashboardLayout = () => {
       </Box>
 
       <Outlet />
-    </>
+    </Stack>
   );
 };
 
