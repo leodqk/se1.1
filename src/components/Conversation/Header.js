@@ -13,7 +13,7 @@ import { useTheme } from "@mui/material/styles";
 import { faker } from "@faker-js/faker";
 
 const Header = () => {
-    const theme = useTheme();
+  const theme = useTheme();
   return (
     <Box
       p={2}
@@ -23,7 +23,7 @@ const Header = () => {
         backgroundColor:
           theme.palette.mode === "light"
             ? "#F8FAFF"
-            : theme.palette.background.default,
+            : theme.palette.background.paper,
         boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
       }}
     >
