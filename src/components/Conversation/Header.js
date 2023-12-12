@@ -11,19 +11,22 @@ import { CaretDown, MagnifyingGlass, Phone, VideoCamera } from "phosphor-react";
 import StyledBadge from "../StyledBadge";
 import { useTheme } from "@mui/material/styles";
 import { faker } from "@faker-js/faker";
+import { ToggleSideBar } from "../../redux/slices/app";
+import { useDispatch } from "react-redux";
 
 const Header = () => {
   const theme = useTheme();
+  const dispatch = useDispatch();
   return (
     <Box
       p={2}
       sx={{
-        height: 100,
+        height: 72,
         width: "100%",
         backgroundColor:
           theme.palette.mode === "light"
             ? "#F8FAFF"
-            : theme.palette.background.paper,
+            : theme.palette.background.default,
         boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
       }}
     >
@@ -33,7 +36,15 @@ const Header = () => {
         justifyContent={"space-between"}
         sx={{ width: "100%", height: "100%" }}
       >
-        <Stack direction={"row"} spacing={2}>
+        <Stack
+          onClick={() => {
+            dispatch(ToggleSideBar());
+          }}
+          direction={"row"}
+          spacing={2}
+          marginTop={"10px"}
+          paddingBottom={"4px"}
+        >
           <Box>
             <StyledBadge
               overlap="circular"
@@ -43,9 +54,13 @@ const Header = () => {
               }}
               variant="dot"
             >
-              <Avatar alt={faker.name.fullName} src={faker.image.avatar()} />
+              <Avatar
+                sx={{ width: "30px", height: "30px", objectFit: "cover" }}
+                alt={faker.name.fullName}
+                src={faker.image.avatar()}
+              />
             </StyledBadge>
-            <Stack spacing={0.2}>
+            <Stack spacing={0}>
               <Typography variant="subtitle2">
                 {faker.name.fullName()}
               </Typography>
