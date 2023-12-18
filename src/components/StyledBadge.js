@@ -18,7 +18,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
       content: '""',
     },
   },
-  "keyframes ripple": {
+  "@keyframes ripple": {
     "0%": {
       transform: "scale(.8)",
       opacity: 1,
@@ -31,4 +31,3 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 export default StyledBadge;
-
