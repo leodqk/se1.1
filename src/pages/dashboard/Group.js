@@ -17,17 +17,16 @@ import {
   StyledInputBase,
 } from "../../components/Search";
 import ChatElement from "../../upload/ChatElement";
+import CreateGroup from "../../sections/main/CreateGroup";
 
 const Group = () => {
+  const theme = useTheme();
   const [openDialog, setOpenDialog] = useState(false);
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
-  }
-  const handleOpenDialog = () => {
-    setOpenDialog(true);
-  }
-  const theme = useTheme();
+  };
+
   return (
     <>
       <Stack direction="row" sx={{ width: "100%" }}>
@@ -74,7 +73,11 @@ const Group = () => {
               <Typography variant="subtitle2" sx={{}} component={Link}>
                 Create New Group
               </Typography>
-              <IconButton onClick={handleOpenDialog}>
+              <IconButton
+                onClick={() => {
+                  setOpenDialog(true);
+                }}
+              >
                 <Plus style={{ color: theme.palette.primary.main }} />
               </IconButton>
             </Stack>
@@ -101,10 +104,11 @@ const Group = () => {
             </Stack>
           </Stack>
         </Box>
-
         {/* Right */}
       </Stack>
-      {/* {openDialog && <CreateGroup open={openDialog} handleClose={handleCloseDialog} />} */}
+      {openDialog && (
+        <CreateGroup open={openDialog} handleClose={handleCloseDialog} />
+      )}
     </>
   );
 };
