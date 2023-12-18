@@ -46,6 +46,113 @@ const Nav_Setting = [
   },
 ];
 
+const CallList = [
+  {
+    id: 0,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+    incoming: true,
+    missed: false,
+  },
+  {
+    id: 1,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+    incoming: false,
+    missed: true,
+  },
+  {
+    id: 2,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+    incoming: true,
+    missed: true,
+  },
+  {
+    id: 3,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+    incoming: false,
+    missed: false,
+  },
+  {
+    id: 4,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+    incoming: true,
+    missed: false,
+  },
+  {
+    id: 5,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+    incoming: false,
+    missed: false,
+  },
+  {
+    id: 6,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+    incoming: true,
+    missed: false,
+  },
+  {
+    id: 7,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+    incoming: false,
+    missed: false,
+  },
+  {
+    id: 8,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+    incoming: true,
+    missed: false,
+  },
+  {
+    id: 9,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+    incoming: false,
+    missed: false,
+  },
+  {
+    id: 10,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+    incoming: true,
+    missed: false,
+  },
+  {
+    id: 11,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+    incoming: false,
+    missed: false,
+  },
+  {
+    id: 12,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+    incoming: true,
+    missed: false,
+  },
+];
+
 const ChatList = [
   {
     id: 0,
@@ -228,7 +335,7 @@ const SHARED_LINKS = [
     message: "Yep, I can also do that",
     incoming: true,
     outgoing: false,
-  }, 
+  },
   {
     type: "msg",
     subtype: "link",
@@ -236,7 +343,7 @@ const SHARED_LINKS = [
     message: "Yep, I can also do that",
     incoming: true,
     outgoing: false,
-  }, 
+  },
   {
     type: "msg",
     subtype: "link",
@@ -244,7 +351,7 @@ const SHARED_LINKS = [
     message: "Yep, I can also do that",
     incoming: true,
     outgoing: false,
-  }, 
+  },
   {
     type: "msg",
     subtype: "link",
@@ -252,7 +359,7 @@ const SHARED_LINKS = [
     message: "Yep, I can also do that",
     incoming: true,
     outgoing: false,
-  }, 
+  },
 ];
 
 const SHARED_DOCS = [
@@ -284,8 +391,7 @@ const SHARED_DOCS = [
     incoming: true,
     outgoing: false,
   },
- 
-]
+];
 
 export {
   Profile_Menu,
@@ -295,5 +401,6 @@ export {
   Chat_History,
   Message_options,
   SHARED_DOCS,
-  SHARED_LINKS
+  SHARED_LINKS,
+  CallList,
 };
