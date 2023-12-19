@@ -157,12 +157,12 @@ const Settings = () => {
         <Box
           sx={{
             height: "100%",
-            width: "calc(100vw - 420px )",
+            width: "calc(100vw - 424px )",
             backgroundColor:
               theme.palette.mode === "light"
                 ? "#FFF"
                 : theme.palette.background.paper,
-            borderBottom: "6px solid #0162C4",
+            // borderBottom: "6px solid #0162C4",
           }}
         ></Box>
       </Stack>
