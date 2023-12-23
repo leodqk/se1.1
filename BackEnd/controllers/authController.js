@@ -78,7 +78,7 @@ exports.sendOTP = async (req, res, next) => {
 
   // TODO send mail
   mailService.sendEmail({
-    from: "shreyanshshah242@gmail.com",
+    from: "khaiyeudiu@gmail.com",
     to: user.email,
     subject: "Verification OTP",
     html: otp(user.firstName, new_otp),
@@ -259,7 +259,6 @@ exports.forgotPassword = async (req, res, next) => {
 };
 
 exports.resetPassword = async (req, res, next) => {
-
   // 1) Get user based on the token
   const hashedToken = crypto
     .createHash("sha256")
@@ -285,5 +284,5 @@ exports.resetPassword = async (req, res, next) => {
   // 4) Log the user in, send JWT
   res.status(200).json({
     status: "success",
-  })
+  });
 };
