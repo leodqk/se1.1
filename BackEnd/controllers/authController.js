@@ -78,7 +78,7 @@ exports.sendOTP = async (req, res, next) => {
 
   // TODO send mail
   mailService.sendEmail({
-    from: "khaiyeudiu@gmail.com",
+    from: "kienle20034@gmail.com",
     to: user.email,
     subject: "Verification OTP",
     html: otp(user.firstName, new_otp),
@@ -228,7 +228,10 @@ exports.forgotPassword = async (req, res, next) => {
   // 1) Get user based on POSTed email
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
-    return next(new AppError("There is no user with email address.", 404));
+    return res.status(400).json({
+      status: "error",
+      message: "There is no user with email address.",
+    });
   }
 
   // 2) Generate the random reset token
@@ -237,7 +240,7 @@ exports.forgotPassword = async (req, res, next) => {
 
   // 3) Send it to user's email
   try {
-    const resetURL = `https://tawk.com/auth/reset-password/${resetToken}`;
+    const resetURL = `https://chatappdqk.com/auth/reset-password/${resetToken}`;
     // TODO => Send Email with this Reset URL to user's email address
 
     console.log(resetToken);
@@ -272,7 +275,10 @@ exports.resetPassword = async (req, res, next) => {
 
   // 2) If token has not expired, and there is user, set the new password
   if (!user) {
-    return next(new AppError("Token is invalid or has expired", 400));
+    return res.status(400).json({
+      status: "error",
+      message: "Token is invalid or has expired",
+    });
   }
   user.password = req.body.password;
   user.passwordConfirm = req.body.passwordConfirm;
