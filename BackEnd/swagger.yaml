@@ -1,0 +1,273 @@
+openapi: 3.0.3
+info:
+  title: ChatAPP - OpenAPI 3.0
+  description: |-
+
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: apiteam@swagger.io
+
+  version: 1.0.11
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: http://localhost:3000/
+
+paths:
+  /auth/register:
+    post:
+      summary: Register a new user or update an existing one
+      description: This endpoint allows a new user to register or an existing user to update their information. If the email provided is already in use by a verified user, an error message is returned. If the email is in use by an unverified user, the user's information is updated. If the email is not in use, a new user is created.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                  example: Duong
+                lastName:
+                  type: string
+                  example: Khai
+                email:
+                  type: string
+                  format: email
+                  example: leodqk@gmail.com
+                password:
+                  type: string
+                  example: 123456
+      responses:
+        "200":
+          description: User registered or updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: OTP Sent Successfully!
+        "400":
+          description: Email already in use by a verified user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: Email already in use, Please login.
+
+  /auth/verify:
+    post:
+      summary: "Verify OTP and update user accordingly"
+      description: "This endpoint verifies the OTP provided by the user and updates the user status accordingly."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: leodqk@gmail.com
+                otp:
+                  type: string
+                  example: 635478
+
+      responses:
+        200:
+          description: "OTP verified successfully"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: OTP verified successfully
+                  token:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+        400:
+          description: "Error in OTP verification"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: OTP is incorrect
+
+  /auth/login:
+    post:
+      summary: "User login"
+      description: "This endpoint allows users to log in by providing their email and password."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: leodqk@gmail.com
+                password:
+                  type: string
+                  example: 635478
+
+      responses:
+        200:
+          description: "Logged in successfully"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: Logged in successfully
+                  token:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+        400:
+          description: "Error in login"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: email or password is incorrect
+
+  /auth/forgot-password:
+    post:
+      summary: "Request reset password email"
+      description: "This endpoint allows a user to request a password reset email. The user must provide their email address, and if an account with that email exists, a reset token will be generated and sent to the user's email."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: leodqk@gmail.com
+
+      responses:
+        200:
+          description: "The password reset token was successfully generated and sent to the user's email."
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: Token sent successfully
+        400:
+          description: "Email not found"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: There is no user with email address.
+
+        500:
+          description: "App error"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: There was an error sending the email. Try again later!
+
+  /auth/reset-password:
+    post:
+      summary: "Reset user password"
+      description: "This endpoint allows a user to request a password reset email. The user must provide their email address, and if an account with that email exists, a reset token will be generated and sent to the user's email."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: 5082003
+                passwordConfirm:
+                  type: string
+                  example: 5082003
+                token:
+                  type: string
+                  example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+
+      responses:
+        200:
+          description: "The password reset token was successfully generated and sent to the user's email."
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+
+        400:
+          description: "Token is invalid or has expired."
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: Token is invalid or has expired.
