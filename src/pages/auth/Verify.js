@@ -14,9 +14,7 @@ export default function LoginPage() {
         <Typography variant="h4">Please Verify OTP</Typography>
 
         <Stack direction="row" spacing={0.5}>
-          <Typography variant="body2">
-            Sent to email (khaiyeudiu@gmail.com)
-          </Typography>
+          <Typography variant="body2">Sent to email</Typography>
         </Stack>
       </Stack>
       {/* Form */}
